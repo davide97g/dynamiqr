@@ -11,6 +11,8 @@ import { OrderComponent } from './pages/order/order.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 import { PopupComponent } from './components/popup/popup.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { PopupComponent } from './components/popup/popup.component';
     OrderComponent,
     MenuComponent,
     ProgressBarComponent,
-    PopupComponent
+    PopupComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
