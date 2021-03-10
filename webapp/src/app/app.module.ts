@@ -8,6 +8,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { RedirectComponent } from './pages/redirect/redirect.component';
 import { PersonalAreaComponent } from './pages/personal-area/personal-area.component';
 import { OrderComponent } from './pages/order/order.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import { PopupComponent } from './components/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { OrderComponent } from './pages/order/order.component';
     HomeComponent,
     RedirectComponent,
     PersonalAreaComponent,
-    OrderComponent
+    OrderComponent,
+    MenuComponent,
+    ProgressBarComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
