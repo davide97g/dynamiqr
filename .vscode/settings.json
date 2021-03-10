@@ -1,0 +1,7 @@
+{
+    "editor.formatOnSave": true,
+    "editor.fontFamily": "Fira Code Light",
+    "editor.fontSize": 15,
+    "terminal.integrated.fontFamily": "Fira Code Light",
+    "terminal.integrated.fontSize": 15
+}
