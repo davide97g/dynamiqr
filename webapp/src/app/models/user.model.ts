@@ -30,6 +30,20 @@ export interface User {
     shirts?: any[]
 }
 
+export class User implements User {
+    constructor() {
+        this.uid = ''
+        this.email = ''
+        this.displayName = ''
+        this.photoURL = ''
+        this.metadata = {
+            creationTime: '',
+            lastSignInTime: '',
+        }
+        this.shirts = []
+    }
+}
+
 export const mocked: User = {
     uid: '3NHoQl7UUGZuWtNV02QM',
     email: 'test@gmail.com',

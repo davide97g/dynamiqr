@@ -1,1 +1,84 @@
-<p>menu works!</p>
+<mat-toolbar color="primary">
+    <span (click)="router.navigateByUrl('home')" style="cursor: pointer">
+        <h1>
+            {{ title }}
+            {{ user ? '| ' + user.displayName : '' }}
+            <img
+                *ngIf="user?.photoURL"
+                class="example-option-img"
+                aria-hidden
+                [src]="user.photoURL"
+                height="40"
+                style="border-radius: 100%; border: 2px solid white"
+            />
+            <i
+                *ngIf="!user?.photoURL"
+                class="material-icons md-48 example-option-img"
+                style="font-size: xxx-large"
+                >account_circle</i
+            >
+        </h1>
+    </span>
+    <span class="fill-remaining-space"></span>
+    <span>
+        <div *ngIf="user; then authenticated; else guest"></div>
+        <ng-template #guest>
+            <!-- login -->
+            <button
+                color="primary"
+                mat-raised-button
+                (click)="router.navigateByUrl('login')"
+            >
+                <i class="material-icons md-48">login</i>
+                Login
+            </button>
+        </ng-template>
+        <ng-template #authenticated>
+            <!-- admin -->
+            <button
+                color="primary"
+                mat-raised-button
+                (click)="router.navigateByUrl('admin')"
+                class="menu-tab"
+            >
+                Admin
+                <i class="material-icons">admin_panel_settings</i>
+            </button>
+            <!-- order -->
+            <button
+                color="primary"
+                mat-raised-button
+                (click)="router.navigateByUrl('order')"
+                class="menu-tab"
+            >
+                Order
+                <i class="material-icons">add_box</i>
+            </button>
+            <!-- shirts -->
+            <button
+                color="primary"
+                mat-raised-button
+                (click)="router.navigateByUrl('shirts')"
+                class="menu-tab"
+            >
+                Shirts
+                <i class="material-icons">qr_code</i>
+            </button>
+            <!-- personal area -->
+            <button
+                color="primary"
+                mat-raised-button
+                (click)="router.navigateByUrl('personal-area')"
+                class="menu-tab"
+            >
+                Personal Area
+                <i class="material-icons">account_circle</i>
+            </button>
+            <!-- logout -->
+            <button mat-button (click)="auth.signOut()" class="menu-tab">
+                Logout
+                <mat-icon>exit_to_app</mat-icon>
+            </button>
+        </ng-template>
+    </span>
+</mat-toolbar>

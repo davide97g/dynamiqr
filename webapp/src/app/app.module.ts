@@ -36,6 +36,12 @@ const config = {
     measurementId: 'G-P8K36P1EP7',
 }
 
+/** @angular/material */
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatIconModule } from '@angular/material/icon'
+import { MatButtonModule } from '@angular/material/button';
+import { LoginComponent } from './pages/login/login.component'
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -53,6 +59,7 @@ const config = {
         TermsOfServiceComponent,
         PrivacyPolicyComponent,
         ShirtsComponent,
+        LoginComponent,
     ],
     imports: [
         BrowserModule,
@@ -61,6 +68,9 @@ const config = {
         AngularFireModule.initializeApp(config),
         AngularFirestoreModule,
         AngularFireAuthModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
