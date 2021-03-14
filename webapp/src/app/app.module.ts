@@ -18,6 +18,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component'
 import { TermsOfServiceComponent } from './pages/terms-of-service/terms-of-service.component'
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component'
 import { ShirtsComponent } from './pages/shirts/shirts.component'
+import { LoginComponent } from './pages/login/login.component'
 
 /** @angular/fire */
 import { AngularFireModule } from '@angular/fire'
@@ -39,9 +40,10 @@ const config = {
 /** @angular/material */
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatIconModule } from '@angular/material/icon'
-import { MatButtonModule } from '@angular/material/button';
-import { LoginComponent } from './pages/login/login.component'
-
+import { MatButtonModule } from '@angular/material/button'
+import { MatCardModule } from '@angular/material/card'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
 @NgModule({
     declarations: [
         AppComponent,
@@ -71,6 +73,9 @@ import { LoginComponent } from './pages/login/login.component'
         MatToolbarModule,
         MatIconModule,
         MatButtonModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
