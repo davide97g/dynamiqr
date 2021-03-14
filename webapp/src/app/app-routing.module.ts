@@ -6,6 +6,7 @@ import { OrderComponent } from './pages/order/order.component'
 import { PersonalAreaComponent } from './pages/personal-area/personal-area.component'
 import { RedirectComponent } from './pages/redirect/redirect.component'
 import { AdminComponent } from './pages/admin/admin.component'
+import { LoginComponent } from './pages/login/login.component'
 
 const routes: Routes = [
     {
@@ -31,6 +32,10 @@ const routes: Routes = [
     {
         path: 'admin',
         component: AdminComponent,
+    },
+    {
+        path: 'login',
+        component: LoginComponent,
     },
     { path: '', pathMatch: 'full', redirectTo: 'home' },
     { path: '**', component: HomeComponent },
