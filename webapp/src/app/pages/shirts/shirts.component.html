@@ -1,40 +1,42 @@
-<mat-card
-    class="shirt-card"
-    *ngFor="let shirt of shirts"
-    style="display: inline-block; width: 400px; margin: 5px"
->
-    <mat-card-header>
-        <mat-card-title>Shirt ID: {{ shirt.id }}</mat-card-title>
-        <mat-card-subtitle>v{{ shirt.version }}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-        <mat-card *ngFor="let qr of shirt.qrs">
-            <mat-card-header>
-                <mat-card-title>QR {{ qr.code }}</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <form class="example-form">
-                    <mat-form-field class="example-full-width">
-                        <mat-label>QR code link</mat-label>
-                        <input
-                            matInput
-                            placeholder="Your link here"
-                            [value]="qr.link"
-                            [readonly]="true"
-                        />
-                    </mat-form-field>
-                </form>
-            </mat-card-content>
-            <mat-card-actions>
-                <button
-                    mat-raised-button
-                    color="primary"
-                    (click)="test(qr.link)"
-                >
-                    Test
-                </button>
-                <button mat-raised-button color="warn">Edit</button>
-            </mat-card-actions>
-        </mat-card>
-    </mat-card-content>
-</mat-card>
+<div id="container">
+    <mat-card
+        class="shirt-card glass"
+        *ngFor="let shirt of shirts"
+        style="display: inline-block; width: 400px; margin: 5px"
+    >
+        <mat-card-header>
+            <mat-card-title>Shirt ID: {{ shirt.id }}</mat-card-title>
+            <mat-card-subtitle>v{{ shirt.version }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-card *ngFor="let qr of shirt.qrs" class="glass">
+                <mat-card-header>
+                    <mat-card-title>QR {{ qr.code }}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <form class="example-form">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>QR code link</mat-label>
+                            <input
+                                matInput
+                                placeholder="Your link here"
+                                [value]="qr.link"
+                                [readonly]="true"
+                            />
+                        </mat-form-field>
+                    </form>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button
+                        mat-raised-button
+                        color="primary"
+                        (click)="test(qr.link)"
+                    >
+                        Test
+                    </button>
+                    <button mat-raised-button color="warn">Edit</button>
+                </mat-card-actions>
+            </mat-card>
+        </mat-card-content>
+    </mat-card>
+</div>
