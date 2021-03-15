@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core'
+import { UtilsService } from './utils.service'
 import { Shirt, mocks as shirts } from '../models/shirt.model'
 import { User } from '../models/user.model'
 
@@ -6,7 +7,7 @@ import { User } from '../models/user.model'
     providedIn: 'root',
 })
 export class ApiService {
-    constructor() {}
+    constructor(private utils: UtilsService) {}
 
     async decrypt(code: string): Promise<string> {
         console.info('decrypt', code)
@@ -18,6 +19,10 @@ export class ApiService {
     }
 
     async getUserShirts(user: User): Promise<Shirt[]> {
+        this.utils.spinner.next(true)
+        setTimeout(() => {
+            this.utils.spinner.next(false)
+        }, 2000)
         return shirts
     }
 

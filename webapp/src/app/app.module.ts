@@ -18,6 +18,7 @@ import { TermsOfServiceComponent } from './pages/terms-of-service/terms-of-servi
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component'
 import { ShirtsComponent } from './pages/shirts/shirts.component'
 import { LoginComponent } from './pages/login/login.component'
+import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component'
 
 /** @angular/fire */
 import { AngularFireModule } from '@angular/fire'
@@ -43,6 +44,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 @NgModule({
     declarations: [
         AppComponent,
@@ -60,6 +62,7 @@ import { MatInputModule } from '@angular/material/input'
         PrivacyPolicyComponent,
         ShirtsComponent,
         LoginComponent,
+        ProgressSpinnerComponent,
     ],
     imports: [
         BrowserModule,
@@ -74,6 +77,7 @@ import { MatInputModule } from '@angular/material/input'
         MatCardModule,
         MatFormFieldModule,
         MatInputModule,
+        MatProgressSpinnerModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
