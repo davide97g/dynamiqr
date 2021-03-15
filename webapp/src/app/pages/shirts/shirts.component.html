@@ -5,7 +5,7 @@
         style="display: inline-block; width: 400px; margin: 5px"
     >
         <mat-card-header>
-            <mat-card-title>Shirt ID: {{ shirt.id }}</mat-card-title>
+            <mat-card-title>Shirt #{{ shirt.id }}</mat-card-title>
             <mat-card-subtitle>v{{ shirt.version }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
@@ -16,26 +16,45 @@
                 <mat-card-content>
                     <form class="example-form">
                         <mat-form-field class="example-full-width">
-                            <mat-label>QR code link</mat-label>
+                            <mat-label>Link</mat-label>
                             <input
+                                [id]="'link-' + shirt.id + '-' + qr.code"
                                 matInput
                                 placeholder="Your link here"
                                 [value]="qr.link"
-                                [readonly]="true"
+                                [readonly]="!mapEdits[shirt.id][qr.code]"
                             />
+                            <mat-icon
+                                matSuffix
+                                *ngIf="!mapEdits[shirt.id][qr.code]"
+                                class="clickable"
+                                (click)="edit(shirt.id, qr.code)"
+                                >edit</mat-icon
+                            >
+                            <mat-icon
+                                matSuffix
+                                *ngIf="mapEdits[shirt.id][qr.code]"
+                                class="clickable"
+                                (click)="cancel(shirt.id, qr.code, qr.link)"
+                                >cancel</mat-icon
+                            >
+                            <mat-icon
+                                matSuffix
+                                *ngIf="mapEdits[shirt.id][qr.code]"
+                                class="clickable"
+                                (click)="save(shirt.id, qr.code)"
+                                >save</mat-icon
+                            >
+                            <mat-icon
+                                matSuffix
+                                *ngIf="!mapEdits[shirt.id][qr.code]"
+                                class="clickable"
+                                (click)="test(qr.link)"
+                                >open_in_new</mat-icon
+                            >
                         </mat-form-field>
                     </form>
                 </mat-card-content>
-                <mat-card-actions>
-                    <button
-                        mat-raised-button
-                        color="primary"
-                        (click)="test(qr.link)"
-                    >
-                        Test
-                    </button>
-                    <button mat-raised-button color="warn">Edit</button>
-                </mat-card-actions>
             </mat-card>
         </mat-card-content>
     </mat-card>

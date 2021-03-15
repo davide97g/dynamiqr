@@ -20,4 +20,12 @@ export class ApiService {
     async getUserShirts(user: User): Promise<Shirt[]> {
         return shirts
     }
+
+    async saveQRLink(
+        shirt_id: string,
+        qr_code: string,
+        new_link: string
+    ): Promise<boolean> {
+        return true
+    }
 }
