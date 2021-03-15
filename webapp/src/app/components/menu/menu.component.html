@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-    <span (click)="router.navigateByUrl('home')" style="cursor: pointer">
+    <span (click)="router.navigateByUrl('')" style="cursor: pointer">
         <h1>
             {{ title }}
             {{ user ? '| ' + user.displayName : '' }}
@@ -65,7 +65,7 @@
                 <i class="material-icons">qr_code</i>
             </button>
             <!-- personal area -->
-            <button
+            <!-- <button
                 color="primary"
                 mat-raised-button
                 (click)="router.navigateByUrl('personal-area')"
@@ -73,7 +73,7 @@
             >
                 Personal Area
                 <i class="material-icons">account_circle</i>
-            </button>
+            </button> -->
             <!-- logout -->
             <button mat-button (click)="auth.signOut()" class="menu-tab">
                 Logout

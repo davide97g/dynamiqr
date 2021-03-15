@@ -6,7 +6,6 @@ import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HomeComponent } from './pages/home/home.component'
 import { RedirectComponent } from './pages/redirect/redirect.component'
-import { PersonalAreaComponent } from './pages/personal-area/personal-area.component'
 import { OrderComponent } from './pages/order/order.component'
 import { MenuComponent } from './components/menu/menu.component'
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component'
@@ -49,7 +48,6 @@ import { MatInputModule } from '@angular/material/input'
         AppComponent,
         HomeComponent,
         RedirectComponent,
-        PersonalAreaComponent,
         OrderComponent,
         MenuComponent,
         ProgressBarComponent,

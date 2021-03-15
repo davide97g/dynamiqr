@@ -3,23 +3,18 @@ import { RouterModule, Routes } from '@angular/router'
 import { ShirtsComponent } from './pages/shirts/shirts.component'
 import { HomeComponent } from './pages/home/home.component'
 import { OrderComponent } from './pages/order/order.component'
-import { PersonalAreaComponent } from './pages/personal-area/personal-area.component'
 import { RedirectComponent } from './pages/redirect/redirect.component'
 import { AdminComponent } from './pages/admin/admin.component'
 import { LoginComponent } from './pages/login/login.component'
 
 const routes: Routes = [
     {
-        path: 'home',
+        path: '',
         component: HomeComponent,
     },
     {
         path: 'redirect',
         component: RedirectComponent,
-    },
-    {
-        path: 'personal-area',
-        component: PersonalAreaComponent,
     },
     {
         path: 'order',
@@ -37,7 +32,8 @@ const routes: Routes = [
         path: 'login',
         component: LoginComponent,
     },
-    { path: '', pathMatch: 'full', redirectTo: 'home' },
+    { path: 'home', pathMatch: 'full', redirectTo: '' },
+    { path: '', pathMatch: 'full', redirectTo: '' },
     { path: '**', component: HomeComponent },
 ]
 
