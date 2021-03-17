@@ -5,7 +5,7 @@
             {{ user ? '| ' + user.displayName : '' }}
             <img
                 *ngIf="user?.photoURL"
-                class="example-option-img"
+                class="example-option-img glass"
                 aria-hidden
                 [src]="user.photoURL"
                 height="40"
@@ -27,6 +27,7 @@
             <button
                 color="primary"
                 mat-raised-button
+                class="glass"
                 (click)="router.navigateByUrl('login')"
             >
                 <i class="material-icons md-48">login</i>
